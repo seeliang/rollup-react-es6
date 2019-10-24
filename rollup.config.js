@@ -1,4 +1,5 @@
 import babel from 'rollup-plugin-babel';
+import externalGlobals from "rollup-plugin-external-globals";
 export default {
   input: 'index.js',
   output: {
@@ -6,6 +7,10 @@ export default {
     format: 'esm'
   },
   plugins: [
-    babel()
+    babel(),
+    externalGlobals({
+      react: "React",
+      "react-dom": 'ReactDOM'
+    })
   ]
 };
