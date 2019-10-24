@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Part = React.createElement("p", null, " part");
+const list = [1, 2, 3, 4, 5, 6, 7, 7, 8, 8];
+const Part = React.createElement("div", null, list.map(i => React.createElement("p", null, " number ", i, " ")));
 
 function App() {
   return React.createElement("div", {
